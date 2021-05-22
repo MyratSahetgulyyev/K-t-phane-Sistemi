@@ -1,0 +1,22 @@
+﻿@model Kutuphane.Models.Entity.TBLDUYURU
+@{
+    ViewBag.Title = "DuyuruEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Duyuru Ekle</h2>
+<br />
+<form method="post" style="margin-left:15px" class="form-group">
+    <label>Konu</label>
+    <input type="text" name="KONU" class="form-control" />
+    <br />
+    <label>Içerik</label>
+    <input type="text" name="ICERIK" class="form-control" />
+    <br />
+    <label>Tarih </label>
+    <input type="text" name="TARIH" class="form-control" value="@DateTime.Now.ToShortDateString()" />
+    <br />
+    <div><button class="btn btn-info" id="Btn1">Duyuru Ekle</button></div>
+
+</form>
+

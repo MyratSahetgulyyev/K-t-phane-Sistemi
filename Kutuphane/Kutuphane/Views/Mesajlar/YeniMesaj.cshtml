@@ -1,0 +1,27 @@
+﻿@model Kutuphane.Models.Entity.TBLMESAJLAR
+@{
+    ViewBag.Title = "YeniMesaj";
+    Layout = "~/Views/Shared/_LayoutPanel.cshtml";
+}
+
+@using (Html.BeginForm("YeniMesaj", "Mesajlar", FormMethod.Post))
+{
+    <br/>
+    <div class="form-group">
+        <label>Kime Gönderilecek</label>
+        @Html.TextBoxFor(k => k.ALICI, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Konu</label>
+        @Html.TextBoxFor(k => k.KONU, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Içerik</label>
+        @Html.TextAreaFor(k => k.ICERIK, new { @class = "form-control" })
+    </div>
+    <div>
+        <button class="btn btn-warning">Mesaj gönder</button>
+    </div>
+}
+
+

@@ -1,0 +1,36 @@
+﻿@model Kutuphane.Models.Entity.TBLHAREKET
+@{
+    ViewBag.Title = "OduncGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("OduncGuncelle", "OduncVer", FormMethod.Post))
+{
+<div class="form-group">
+    <label>Hareket ID</label>
+    @Html.TextBoxFor(k => k.ID, new { @class = "form-control" })
+    <br />
+    <label>Kitap Adı</label>
+    @Html.TextBoxFor(k => k.KITAP1.AD, new { @class = "form-control" })
+    <br />
+    <label>Personel</label>
+    @Html.TextBoxFor(k => k.TBLPERSONEL.PERSONEL, new { @class = "form-control" })
+    <br />
+    <label>Alış Tarihi</label>
+    @Html.TextBoxFor(k => k.ALISTARIH, "{0: dd.MMM.yyyy}", new { @class = "form-control" })
+    <br />
+    <label>Iade Tarihi</label>
+    @Html.TextBoxFor(k => k.IADETARIH, "{0: dd.MMM.yyyy}", new { @class = "form-control" })
+    <br />
+    <label>Üyenin Teslim Ettiği Tarih</label>
+    <input type="text" class = "form-control" name="MUSTEGETITARIH" value="@DateTime.Now.ToShortDateString()" />
+    <br />
+    <label>Geç kalınan gün</label>
+    <input type="text"  id="ceza" value="@ViewBag.dgr" class="form-control"/>
+</div>
+    <div>
+        <button class="btn btn-warning">Kitabı Geri Al</button>
+    </div>
+}
+
+

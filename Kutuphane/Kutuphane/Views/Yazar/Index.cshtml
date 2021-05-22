@@ -1,0 +1,34 @@
+﻿@using Kutuphane.Models.Entity
+@model List<TBLYAZAR>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Yazarlar</h2>
+<table class="table table-striped" methot="post">
+    <tr style="background-color:deepskyblue">
+        <th>ID</th>
+        <th>ADI</th>
+        <th>SOYADI</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+        <th>Yazarın Kitapları</th>
+    </tr>
+    @foreach(var y in Model)
+            {
+                <tr >
+                    <td>@y.ID</td>
+                    <td>@y.AD</td>
+                    <td>@y.SOYAD</td>
+                    @*aletr kullanımı*@
+                    <td>@Html.ActionLink("Sil","YazarSil", new { id=y.ID}, 
+                       new { @class="btn btn-danger", onclick="return confirm('Silmek istediğinize eminmisiniz?')"})</td>
+                    <td><a href="/Yazar/YazarGetir/@y.ID" class="btn btn-success">Güncelle</a></td>
+                    <td><a href="/Yazar/YazarKitaplar/@y.ID" class="btn btn-info">Yazarın Kitapları</a></td>
+                    
+                </tr>
+            }
+</table>
+<a href="/Yazar/YazarEkle/" class="btn btn-primary">Yeni Yazar Ekle</a>
+

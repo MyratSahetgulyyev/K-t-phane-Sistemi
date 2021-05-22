@@ -1,0 +1,25 @@
+﻿@model Kutuphane.Models.Entity.TBLDUYURU
+@{
+    ViewBag.Title = "DuyuruGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>Detaylar</h2>
+@using (Html.BeginForm("DuyuruGuncelle", "Duyuru", FormMethod.Post))
+{
+<div class="form-group">
+    <Label>ID</Label>
+    @Html.TextBoxFor(k => k.ID, new { @class = "form-control" })
+    <br />
+    <Label>Konu</Label>
+    @Html.TextBoxFor(k => k.KONU, new { @class = "form-control" })
+    <br />
+    <label>Içerik</label>
+    @Html.TextAreaFor(k => k.ICERIK, new { @class = "form-control" })
+</div>
+<br />
+    <div>
+        <button class="btn btn-warning">Güncelle</button>
+    </div>
+}
+

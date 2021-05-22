@@ -1,0 +1,42 @@
+﻿@model Kutuphane.Models.Entity.TBLUYELER
+@{
+    ViewBag.Title = "UyeGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("UyeGuncelle", "Uye", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.LabelFor(k => k.ID)
+    @Html.TextBoxFor(k => k.ID, new { @class = "form-control" })
+    <br />
+    <label>Uye Adı</label>
+    @Html.TextBoxFor(k => k.AD, new { @class = "form-control" })
+    <br />
+    <label>Soyadı</label>
+    @Html.TextBoxFor(k => k.SOYAD, new { @class = "form-control" })
+    <br />
+    <label>Mail</label>
+    @Html.TextBoxFor(k => k.MAIL, new { @class = "form-control" })
+    <br />
+    <label>Kullanıcı Adı</label>
+    @Html.TextBoxFor(k => k.KULLANICIADI, new { @class = "form-control" })
+    <br />
+    <label>Şifre</label>
+    @Html.TextBoxFor(k => k.SIFRE, new { @class = "form-control" })
+    <br />
+    <label>Fotograf</label>
+    @Html.TextBoxFor(k => k.FOTOGRAF, new { @class = "form-control" })
+    <br />
+    <label>Telefon</label>
+    @Html.TextBoxFor(k => k.TELEFON, new { @class = "form-control" })
+    <br />
+    <label>Okul</label>
+    @Html.TextBoxFor(k => k.OKUL, new { @class = "form-control" })
+
+</div>
+    <div>
+        <button class="btn btn-warning">Personel Güncelle</button>
+    </div>
+}
+

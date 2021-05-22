@@ -1,0 +1,38 @@
+﻿@using Kutuphane.Models.Entity
+@model List<KITAP>
+@{
+    ViewBag.Title = "YazarKitaplar";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<br />
+<h2> @ViewBag.soyad</h2>
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>Id</th>
+        <th>Kitap Adı </th>
+        <th>Kategori </th>
+        <th>Yayın Evi </th>
+        <th> Sayfa</th>
+        <th> Durumu</th>
+        <th>Sil</th>
+        <th>Güncelle</th>
+
+
+    </tr>
+    @foreach (var ktp in Model)
+    {
+        <tr>
+            <td>@ktp.ID</td>
+            <td>@ktp.AD</td>
+            @*ilişkili tablo yazar adı ekleme*@
+            <td>@ktp.TBLKATEGORI.AD </td>
+            <td>@ktp.YAYINEVI</td>
+            <td>@ktp.SAYFA</td>
+            <td>@ktp.DURUM</td>
+            <td> <a href="/Kitap/KitapSil/@ktp.ID/" class="btn btn-danger">Sil</a></td>
+            <td> <a href="/Kitap/KitapGetir/@ktp.ID/" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
