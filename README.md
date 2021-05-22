@@ -1,2 +1,2 @@
-# Asp.net-MVC-K-t-phane
-Bootstrap, css, html, javaScript, c# ile 3 panelli Kütüphane sistemi
+# Kütüphane Sistemi
+Asp.net MVC,Bootstrap, css, html, javaScript, c# ile 3 panelli Kütüphane sistemi
